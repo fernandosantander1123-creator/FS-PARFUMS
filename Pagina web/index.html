@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FS PARFUMS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>FS PARFUMS</h1>
+    <p>Pequeñas fragancias, grandes experiencias</p>
+  </header>
+
+  <div id="cart" onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</div>
+  <div id="cart-items">
+    <h3>Tu carrito</h3>
+    <ul id="cart-list"></ul>
+    <button onclick="sendWhatsApp(+595986338654)">Pedir por WhatsApp</button>
+  </div>
+
+  <div class="container">
+    <!-- Decant 3ml -->
+    <div class="product">
+      <img src="kamrad3ml.jpg" alt="Perfume Kamrad Lataffa 3ml">
+      <div class="product-details">
+        <h2>Kamrad Lataffa - 3ml</h2>
+        <p>Perfume en tamaño pequeño para probar tu aroma favorito.</p>
+        <p>Gs. 25.000</p>
+      </div>
+      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 3ml',25000)">Agregar</button>
+    </div>
+
+    <!-- Decant 5ml -->
+    <div class="product">
+      <img src="kamrad5ml.jpg" alt="Perfume Kamrad Lataffa 5ml">
+      <div class="product-details">
+        <h2>Kamrad Lataffa - 5ml</h2>
+        <p>Fragancia perfecta para disfrutar un poco más.</p>
+        <p>Gs. 35.000</p>
+      </div>
+      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 5ml',35000)">Agregar</button>
+    </div>
+
+    <!-- Decant 10ml -->
+    <div class="product">
+      <img src="kamrad10ml.jpg" alt="Perfume Kamrad Lataffa 10ml">
+      <div class="product-details">
+        <h2>Kamrad Lataffa - 10ml</h2>
+        <p>Disfruta tu perfume favorito en tamaño ideal.</p>
+        <p>Gs. 65.000</p>
+      </div>
+      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 10ml',50000)">Agregar</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Fercho Parfums - Paraguay
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
