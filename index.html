@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perfumes árabes y fragancias exclusivas en Paraguay. Compra decants y prueba tus aromas favoritos.">
+  <meta name="keywords" content="perfumes, fragancias, Paraguay, decants, FS PARFUMS">
+  <meta name="author" content="FS PARFUMS">
+  <title>FS PARFUMS - Perfumes y Fragancias</title>
+  <link rel="icon" href="https://i.imgur.com/BLwLCi8.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/BLwLCi8.jpeg" alt="Logo FS PARFUMS" class="logo">
+    <h1>FS PARFUMS</h1>
+    <p>Pequeñas fragancias, grandes experiencias</p>
+  </header>
+
+  <!-- 🔍 Barra de búsqueda -->
+  <input type="text" id="search-bar" placeholder="Buscar perfumes..." onkeyup="searchProducts()">
+
+  <!-- Botón Carrito -->
+  <div id="cart" onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</div>
+  
+  <!-- Carrito desplegable -->
+  <div id="cart-items">
+    <h3>Tu carrito</h3>
+    <ul id="cart-list"></ul>
+    <button onclick="sendWhatsApp('+595986338654')">Pedir por WhatsApp</button>
+  </div>
+
+  <!-- Productos -->
+  <div class="container" id="product-list">
+
+    <!-- Khamrad -->
+    <div class="product" data-name="Kamrad Lataffa 3ml">
+      <img src="https://i.imgur.com/9eryilj.jpeg" alt="Kamrad Lataffa 3ml">
+      <h2>Kamrad Lataffa - 3ml</h2>
+      <p>Perfume en tamaño pequeño para probar tu aroma favorito.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 3ml',30000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Kamrad Lataffa 5ml">
+      <img src="https://i.imgur.com/9eryilj.jpeg" alt="Kamrad Lataffa 5ml">
+      <h2>Kamrad Lataffa - 5ml</h2>
+      <p>Fragancia perfecta para disfrutar un poco más.</p>
+      <p>Gs. 40.000</p>
+      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 5ml',40000)">Agregar</button>
+    </div>
+
+    <!-- Nuevos perfumes -->
+    <div class="product" data-name="9am Dive 3ml">
+      <img src="https://i.imgur.com/a97bnjM.jpeg" alt="9am Dive 3ml">
+      <h2>9am Dive - 3ml</h2>
+      <p>Pequeño tamaño para probar esta fragancia única.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('9am Dive 3ml',30000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="9am Dive 5ml">
+      <img src="https://i.imgur.com/a97bnjM.jpeg" alt="9am Dive 5ml">
+      <h2>9am Dive - 5ml</h2>
+      <p>Tamaño ideal para disfrutar todo el día.</p>
+      <p>Gs. 40.000</p>
+      <button class="buy-btn" onclick="addToCart('9am Dive 5ml',40000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Mandarin Sky 3ml">
+      <img src="https://i.imgur.com/YJT21xa.jpeg" alt="Mandarin Sky 3ml">
+      <h2>Mandarin Sky - 3ml</h2>
+      <p>Pequeño tamaño para probar esta fragancia cítrica y fresca.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('Mandarin Sky 3ml',30000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Mandarin Sky 5ml">
+      <img src="https://i.imgur.com/YJT21xa.jpeg" alt="Mandarin Sky 5ml">
+      <h2>Mandarin Sky - 5ml</h2>
+      <p>Tamaño ideal para disfrutar todo el día.</p>
+      <p>Gs. 40.000</p>
+      <button class="buy-btn" onclick="addToCart('Mandarin Sky 5ml',40000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="9pm Rebel Red 3ml">
+      <img src="https://i.imgur.com/q60fJW6.jpeg" alt="9pm Rebel Red 3ml">
+      <h2>9pm Rebel Red - 3ml</h2>
+      <p>Pequeño tamaño para probar esta fragancia intensa.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('9pm Rebel Red 3ml',30000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="9pm Rebel Red 5ml">
+      <img src="https://i.imgur.com/q60fJW6.jpeg" alt="9pm Rebel Red 5ml">
+      <h2>9pm Rebel Red - 5ml</h2>
+      <p>Tamaño ideal para disfrutar todo el día.</p>
+      <p>Gs. 40.000</p>
+      <button class="buy-btn" onclick="addToCart('9pm Rebel Red 5ml',40000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Yara Rose 3ml">
+      <img src="https://i.imgur.com/lC4szgI.jpeg" alt="Yara Rose 3ml">
+      <h2>Yara Rose - 3ml</h2>
+      <p>Pequeño tamaño para probar esta fragancia floral.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('Yara Rose 3ml',30000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Yara Rose 5ml">
+      <img src="https://i.imgur.com/lC4szgI.jpeg" alt="Yara Rose 5ml">
+      <h2>Yara Rose - 5ml</h2>
+      <p>Tamaño ideal para disfrutar todo el día.</p>
+      <p>Gs. 40.000</p>
+      <button class="buy-btn" onclick="addToCart('Yara Rose 5ml',40000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Sabah Al Ward 3ml">
+      <img src="https://i.imgur.com/JgovqX4.jpeg" alt="Sabah Al Ward 3ml">
+      <h2>Sabah Al Ward - 3ml</h2>
+      <p>Pequeño tamaño para probar esta fragancia exquisita.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('Sabah Al Ward 3ml',30000)">Agregar</button>
+    </div>
+
+    <div class="product" data-name="Sabah Al Ward 5ml">
+      <img src="https://i.imgur.com/JgovqX4.jpeg" alt="Sabah Al Ward 5ml">
+      <h2>Sabah Al Ward - 5ml</h2>
+      <p>Tamaño ideal para disfrutar todo el día.</p>
+      <p>Gs. 40.000</p>
+      <button class="buy-btn" onclick="addToCart('Sabah Al Ward 5ml',40000)">Agregar</button>
+    </div>
+
+  </div>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/595986338654" target="_blank" rel="noopener noreferrer" class="whatsapp-float">💬 Pedir por WhatsApp</a>
+
+  <footer>
+    <p>&copy; 2025 FS PARFUMS - Paraguay</p>
+    <p>Síguenos en: <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
