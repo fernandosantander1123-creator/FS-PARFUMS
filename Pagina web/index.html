@@ -3,61 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FS PARFUMS</title>
+  <meta name="description" content="Perfumes árabes y fragancias exclusivas en Paraguay. Compra decants y prueba tus aromas favoritos.">
+  <meta name="keywords" content="perfumes, fragancias, Paraguay, decants, FS PARFUMS">
+  <meta name="author" content="FS PARFUMS">
+  <title>FS PARFUMS - Perfumes y Fragancias</title>
+  <link rel="icon" href="https://i.imgur.com/BLwLCi8.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
+    <img src="https://i.imgur.com/BLwLCi8.jpeg" alt="Logo FS PARFUMS" class="logo">
     <h1>FS PARFUMS</h1>
     <p>Pequeñas fragancias, grandes experiencias</p>
   </header>
 
+  <!-- 🔍 Barra de búsqueda -->
+  <input type="text" id="search-bar" placeholder="Buscar perfumes..." onkeyup="searchProducts()">
+
+  <!-- Botón Carrito -->
   <div id="cart" onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</div>
+  
+  <!-- Carrito desplegable -->
   <div id="cart-items">
     <h3>Tu carrito</h3>
     <ul id="cart-list"></ul>
-    <button onclick="sendWhatsApp(+595986338654)">Pedir por WhatsApp</button>
+    <button onclick="sendWhatsApp('+595986338654')">Pedir por WhatsApp</button>
   </div>
 
-  <div class="container">
-    <!-- Decant 3ml -->
-    <div class="product">
-      <img src="kamrad3ml.jpg" alt="Perfume Kamrad Lataffa 3ml">
-      <div class="product-details">
-        <h2>Kamrad Lataffa - 3ml</h2>
-        <p>Perfume en tamaño pequeño para probar tu aroma favorito.</p>
-        <p>Gs. 25.000</p>
-      </div>
-      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 3ml',25000)">Agregar</button>
+  <!-- Productos -->
+  <div class="container" id="product-list">
+
+    <!-- ASAD BOURBON – LATTAFA -->
+    <div class="product" data-name="Asad Bourbon – Lattafa 5ml">
+      <img src="https://i.imgur.com/NANAACu.png" alt="Asad Bourbon – Lattafa">
+      <h2>Asad Bourbon – Lattafa - 5ml</h2>
+      <p>Asad Bourbon es una fragancia intensa, cálida y elegante. Combina notas dulces y especiadas con un fondo amaderado que transmite carácter y presencia. Ideal para quienes buscan un aroma masculino, moderno y con muy buena duración.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('Asad Bourbon – Lattafa 5ml',25000)">Agregar</button>
     </div>
 
-    <!-- Decant 5ml -->
-    <div class="product">
-      <img src="kamrad5ml.jpg" alt="Perfume Kamrad Lataffa 5ml">
-      <div class="product-details">
-        <h2>Kamrad Lataffa - 5ml</h2>
-        <p>Fragancia perfecta para disfrutar un poco más.</p>
-        <p>Gs. 35.000</p>
-      </div>
-      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 5ml',35000)">Agregar</button>
+    <!-- AL HARAMAIN AMBER OUD -->
+    <div class="product" data-name="Al Haramain Amber Oud 5ml">
+      <img src="https://i.imgur.com/9haX3CO.png" alt="Al Haramain Amber Oud">
+      <h2>Al Haramain Amber Oud - 5ml</h2>
+      <p>Amber Oud es una fragancia sofisticada y potente, con un perfil dulce, ambarado y amaderado. Su aroma es lujoso, envolvente y muy reconocido por su excelente rendimiento.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('Al Haramain Amber Oud 5ml',30000)">Agregar</button>
     </div>
 
-    <!-- Decant 10ml -->
-    <div class="product">
-      <img src="kamrad10ml.jpg" alt="Perfume Kamrad Lataffa 10ml">
-      <div class="product-details">
-        <h2>Kamrad Lataffa - 10ml</h2>
-        <p>Disfruta tu perfume favorito en tamaño ideal.</p>
-        <p>Gs. 65.000</p>
-      </div>
-      <button class="buy-btn" onclick="addToCart('Kamrad Lataffa 10ml',50000)">Agregar</button>
+    <!-- VULCAN FEU -->
+    <div class="product" data-name="Vulcan Feu 5ml">
+      <img src="https://i.imgur.com/C07lLrw.png" alt="Vulcan Feu">
+      <h2>Vulcan Feu - 5ml</h2>
+      <p>Vulcan Feu es una fragancia intensa y seductora, con un aroma moderno y poderoso. Ideal para quienes quieren destacar con una presencia fuerte y segura.</p>
+      <p>Gs. 30.000</p>
+      <button class="buy-btn" onclick="addToCart('Vulcan Feu 5ml',30000)">Agregar</button>
     </div>
+
+    <!-- YARA – LATTAFA -->
+    <div class="product" data-name="Yara – Lattafa 5ml">
+      <img src="https://i.imgur.com/zUl3qSN.png" alt="Yara – Lattafa">
+      <h2>Yara – Lattafa - 5ml</h2>
+      <p>Yara es una fragancia femenina dulce, suave y cremosa. Muy agradable y versátil, perfecta para el día a día y para quienes buscan un aroma delicado y encantador.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('Yara – Lattafa 5ml',25000)">Agregar</button>
+    </div>
+
+    <!-- 9 PM REBEL -->
+    <div class="product" data-name="9 PM Rebel 5ml">
+      <img src="https://i.imgur.com/5M16sRR.png" alt="9 PM Rebel">
+      <h2>9 PM Rebel - 5ml</h2>
+      <p>9 PM Rebel es una fragancia juvenil, dulce y moderna. Combina frescura con un fondo cálido que la hace ideal para la noche y para un estilo relajado pero llamativo.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('9 PM Rebel 5ml',25000)">Agregar</button>
+    </div>
+
+    <!-- MANDARYN SKY -->
+    <div class="product" data-name="Mandaryn Sky 5ml">
+      <img src="https://i.imgur.com/JgwUCyw.png" alt="Mandaryn Sky">
+      <h2>Mandaryn Sky - 5ml</h2>
+      <p>Mandaryn Sky es una fragancia fresca, cítrica y ligeramente dulce. Ideal para quienes prefieren aromas ligeros, energéticos y fáciles de usar todos los días.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('Mandaryn Sky 5ml',25000)">Agregar</button>
+    </div>
+
+    <!-- HABIK FOR WOMEN – LATTAFA -->
+    <div class="product" data-name="Habik for Women – Lattafa 5ml">
+      <img src="https://i.imgur.com/tCYpKmh.png" alt="Habik for Women – Lattafa">
+      <h2>Habik for Women – Lattafa - 5ml</h2>
+      <p>Habik for Women es una fragancia femenina elegante y equilibrada, con un aroma suave pero con presencia. Ideal para el día a día y para quienes buscan algo delicado y femenino.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('Habik for Women – Lattafa 5ml',25000)">Agregar</button>
+    </div>
+
+    <!-- SABAH AL WARD -->
+    <div class="product" data-name="Sabah Al Ward 5ml">
+      <img src="https://i.imgur.com/xUiHX2g.png" alt="Sabah Al Ward">
+      <h2>Sabah Al Ward - 5ml</h2>
+      <p>Sabah Al Ward es una fragancia floral intensa y femenina, con un aroma romántico y elegante. Perfecta para amantes de los perfumes florales con carácter.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('Sabah Al Ward 5ml',25000)">Agregar</button>
+    </div>
+
+    <!-- THE KINGDOM – LATTAFA -->
+    <div class="product" data-name="The Kingdom – Lattafa 5ml">
+      <img src="https://i.imgur.com/GFaM4Cz.png" alt="The Kingdom – Lattafa">
+      <h2>The Kingdom – Lattafa - 5ml</h2>
+      <p>The Kingdom es una fragancia poderosa y sofisticada, con un perfil elegante y masculino. Ideal para quienes buscan transmitir seguridad, autoridad y estilo.</p>
+      <p>Gs. 25.000</p>
+      <button class="buy-btn" onclick="addToCart('The Kingdom – Lattafa 5ml',25000)">Agregar</button>
+    </div>
+
   </div>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/595986338654" target="_blank" rel="noopener noreferrer" class="whatsapp-float">💬 Pedir por WhatsApp</a>
 
   <footer>
-    &copy; 2025 Fercho Parfums - Paraguay
+    <p>&copy; 2025 FS PARFUMS - Paraguay</p>
+    <p>Síguenos en: <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
